@@ -1,17 +1,15 @@
 package jm.task.core.jdbc;
 
 import jm.task.core.jdbc.dao.UserDao;
-import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
+import jm.task.core.jdbc.dao.UserDaoHibernateImpl;
 import jm.task.core.jdbc.model.User;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        // Создание таблицы User(ов)
-        UserDao userDao = new UserDaoJDBCImpl();
+        UserDao userDao = new UserDaoHibernateImpl();
         userDao.createUsersTable();
 
         User user1 = new User("Иван","Василич", (byte) 33);

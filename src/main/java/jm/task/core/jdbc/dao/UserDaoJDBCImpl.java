@@ -26,7 +26,7 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
                     "lastName VARCHAR(50) NOT NULL," +
                     "age INT NOT NULL)";
             statement.execute(query);
-            System.out.println("Table created successfully");
+            System.out.println("Table created JDBC");
         } catch (SQLException ex) {
             ex.printStackTrace();
             throw ex;
@@ -40,7 +40,7 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
              Statement statement = Util.createStatement(connection)) {
             String query = "DROP TABLE IF EXISTS users";
             statement.execute(query);
-            System.out.println("Table dropped successfully");
+            System.out.println("Table dropped JDBC");
         } catch (SQLException ex) {
             ex.printStackTrace();
             throw ex;
@@ -56,7 +56,7 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
             preparedStatement.setString(2, lastName);
             preparedStatement.setByte(3, age);
             preparedStatement.executeUpdate();
-            System.out.println("User saved successfully");
+            System.out.println("User saved JDBC");
         } catch (SQLException ex) {
             ex.printStackTrace();
             throw ex;
@@ -70,7 +70,7 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
                      "DELETE FROM users WHERE id = ?")) {
             preparedStatement.setLong(1, id);
             preparedStatement.executeUpdate();
-            System.out.println("User removed successfully");
+            System.out.println("User removed JDBC");
         } catch (SQLException ex) {
             ex.printStackTrace();
             throw ex;
@@ -105,7 +105,7 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
              Statement statement = Util.createStatement(connection)) {
             String query = "TRUNCATE TABLE users";
             statement.execute(query);
-            System.out.println("Table cleaned successfully");
+            System.out.println("Table cleaned JDBC");
         } catch (SQLException ex) {
             ex.printStackTrace();
             throw ex;
